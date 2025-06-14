@@ -20,29 +20,29 @@
 </head>
 
 <body>
-    <div class="w-5 h-5 rounded-full bg-white fixed " id="custom-cursor"></div>
+    <div class="w-5 h-5 rounded-full bg-white fixed" id="custom-cursor"></div>
+    <header class="flex justify-between px-4 py-4 z-50 sticky top-0">
+        <div>
+            <img src="./assets/logo/logo.svg" alt="Logo." width="30" height="30">
+        </div>
+        <button class="nav-toggle-btn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav class="nav-items">
+            <ul class="flex gap-2">
+                <li><a href="#">Home,</a></li>
+                <li><a href="#">Work,</a></li>
+                <li><a href="#">Services,</a></li>
+                <li><a href="#">Studio,</a></li>
+                <li><a href="#">Journal,</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div>
+            <div class="circle w-5 h-5 rounded-full bg-white"></div>
+        </div>
+    </header>
     <main id="main">
-        <header class="flex justify-between px-4 py-4">
-            <div>
-                <img src="./assets/logo.svg" alt="Logo." width="30" height="30">
-            </div>
-            <button class="nav-toggle-btn">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <nav class="nav-items">
-                <ul class="flex gap-2">
-                    <li><a href="#">Home,</a></li>
-                    <li><a href="#">Work,</a></li>
-                    <li><a href="#">Services,</a></li>
-                    <li><a href="#">Studio,</a></li>
-                    <li><a href="#">Journal,</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-            <div>
-                <div class="circle w-5 h-5 rounded-full bg-white"></div>
-            </div>
-        </header>
         <div class="page-1">
             <div class="text-box flex justify-center items-center flex-col">
                 <div class="heading">
@@ -53,10 +53,57 @@
                     extent of
                     your potential. Based in Washington DC, working with clients world-wide.</p>
             </div>
-            <video src="./assets/Duo Reel--Desktop-reduced.mp4" loop autoplay muted width="500" class="mb-96"></video>
+            <video src="./assets/videos/Duo Reel--Desktop-reduced.mp4" loop autoplay muted width="500" class=""></video>
         </div>
-        <div class="page-2">
-            <div></div>
+        <div class="page-2 mt-8">
+            <div class="ml-12">
+                <div>
+                    <h1>
+                        <span class="text-sm mr-4">Capabilities</span>
+                        <span class="text-4xl uppercase">At Duo Studio, we have a passion <br> for crafting personalized
+                            <br>
+                            solutions, including:</span>
+                    </h1>
+                </div>
+                <div class="flex gap-8 items-end">
+                    <div class="left">
+                        <div class="line"></div>
+                        <a href="" class="inline-block py-8 relative col">
+                            <div class="title text-xl">Branding</div>
+                            <p class="w-3/4 text-sm">Brand Identity, Brand Strategy, Logo Design, Messaging,
+                                Positioning, Art Direction,
+                                Brand
+                                Guidelines</p>
+                            <button
+                                class="rounded-full px-6 py-2 border absolute right-0 bottom-4 text-xs cursor-pointer hover:text-white hover:bg-black duration-300">Expand</button>
+                        </a>
+                        <div class="line"></div>
+                        <a href="" class="inline-block py-8 relative col">
+                            <div class="title text-xl">Websites</div>
+                            <p class="w-3/4 text-sm">Web Design, Web Development, UI/UX, Wireframes, Copywriting,
+                                E-Commerce, SEO, CMS, Analytics/Tracking</p>
+                            <button
+                                class="rounded-full px-6 py-2 border absolute right-0 bottom-4 text-xs cursor-pointer hover:text-white hover:bg-black duration-300">Expand</button>
+                        </a>
+                        <div class="line"></div>
+                        <a href="" class="inline-block py-8 relative col">
+                            <div class="title text-xl">Content</div>
+                            <p class="w-3/4 text-sm">Content Strategy, Graphic Design, Marketing Design Collateral,
+                                Packaging, Print Design, Illustration, Motion Graphics</p>
+                            <button
+                                class="rounded-full px-6 py-2 border absolute right-0 bottom-4 text-xs cursor-pointer hover:text-white hover:bg-black duration-300">Expand</button>
+                        </a>
+                        <div class="line"></div>
+                    </div>
+                    <div class="right">
+                        <img src="./assets/services/services__branding@1152.webp" alt="" class="w-full h-full">
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <a href="#" class="learn-more-btn rounded-full px-6 py-2 text-xs duration-150">Learn More</a>
+                </div>
+            </div>
+            <div class="line mt-28"></div>
         </div>
     </main>
 

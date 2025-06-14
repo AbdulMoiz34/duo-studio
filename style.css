@@ -1,6 +1,6 @@
 @font-face {
     font-family: "ppmori";
-    src: url("./assets/ppmori.ttf");
+    src: url("./assets/fonts/ppmori.ttf");
 }
 
 :root {
@@ -20,11 +20,13 @@ body {
 
 main {
     width: 100%;
+    background-color: var(--black);
+    color: #fff;
 }
 
 body {
+    background-color: var(--black);
     color: var(--white);
-    background: var(--bg);
 }
 
 * {
@@ -83,12 +85,44 @@ body {
     z-index: 11;
 }
 
+/* page-2 styling */
 .page-2 {
-    min-height: 100vh;
+    min-height: 250vh;
+    margin-top: 10vw;
 }
 
-.custom-cursor-in-video {
-    width: auto;
-    padding: 0 6px;
-    color: #fff;
+.line {
+    width: 100%;
+    height: 1px;
+    background-color:rgba(0, 0, 0, 0.669);
+}
+
+.page-2 .left {
+    width: 40%;
+    height: 50%;
+}
+
+.page-2 .right {
+    width: 55%;
+    height: 100%;
+}
+
+.page-2 .col button {
+    opacity: 0;
+    transition: all .5s;
+}
+
+.page-2 .col:hover button {
+    opacity: 1;
+}
+
+.page-2 .learn-more-btn {
+    background-color: var(--pink);
+    color: #000;
+
+    &:hover {
+        color: #fff;
+        background-color: #000;
+        border: 1px solid #fff;
+    }
 }
