@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBS Studio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Locomotive CSS-->
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+</head>
+
+<body>
+    <div class="w-5 h-5 rounded-full bg-white fixed " id="custom-cursor"></div>
+    <main id="main">
+        <header class="flex justify-between px-4 py-4">
+            <div>
+                <img src="./assets/logo.svg" alt="Logo." width="30" height="30">
+            </div>
+            <button class="nav-toggle-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <nav class="nav-items">
+                <ul class="flex gap-2">
+                    <li><a href="#">Home,</a></li>
+                    <li><a href="#">Work,</a></li>
+                    <li><a href="#">Services,</a></li>
+                    <li><a href="#">Studio,</a></li>
+                    <li><a href="#">Journal,</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div>
+                <div class="circle w-5 h-5 rounded-full bg-white"></div>
+            </div>
+        </header>
+        <div class="page-1">
+            <div class="text-box flex justify-center items-center flex-col">
+                <div class="heading">
+                    <h1 class="f-h1">A design studio made</h1>
+                    <h1 class="s-h1">to elevate your brand</h1>
+                </div>
+                <p class="">We build brand identities, creative websites, and visual narratives that showcase the full
+                    extent of
+                    your potential. Based in Washington DC, working with clients world-wide.</p>
+            </div>
+            <video src="./assets/Duo Reel--Desktop-reduced.mp4" loop autoplay muted width="500" class="mb-96"></video>
+        </div>
+        <div class="page-2">
+            <div></div>
+        </div>
+    </main>
+
+
+    <!-- Locomotive JS-->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+        integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- GSAP scroll trigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+        integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

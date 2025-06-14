@@ -1,0 +1,94 @@
+@font-face {
+    font-family: "ppmori";
+    src: url("./assets/ppmori.ttf");
+}
+
+:root {
+    --bg: #0F0D0D;
+    --pink: #CCA5DB;
+    --white: #fff;
+    --black: #000;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+}
+
+body {
+    color: var(--white);
+    background: var(--bg);
+}
+
+* {
+    font-family: "ppmori";
+}
+
+/* navbar styling */
+.nav-toggle-btn {
+    display: none;
+}
+
+#custom-cursor {
+    transition: all linear .3s;
+    mix-blend-mode: difference;
+    background-color: #CCA5DB;
+    z-index: 10;
+}
+
+
+.nav-items a {
+    font-size: 14px;
+    font-weight: bold;
+
+    &:hover {
+        color: var(--pink);
+        text-decoration: underline;
+    }
+}
+
+/* page-1 styling */
+
+.page-1 .text-box {
+    min-height: calc(90vh - 65px);
+    margin-top: 5vw;
+    /* position: fixed; */
+}
+
+.page-1 h1 {
+    font-size: 6.5vw;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.page-1 p {
+    text-align: center;
+    width: 37vw;
+    margin-top: 3vw;
+}
+
+.page-1 video {
+    width: 60%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    cursor: pointer;
+    z-index: 11;
+}
+
+.page-2 {
+    min-height: 100vh;
+}
+
+.custom-cursor-in-video {
+    width: auto;
+    padding: 0 6px;
+    color: #fff;
+}
