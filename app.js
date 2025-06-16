@@ -248,7 +248,6 @@ const animPage4 = () => {
         scroller: "#main",
         start: "top 60%",
         end: "top 0%",
-        markers: true,
 
         onEnter: () => {
             main.style.backgroundColor = "#000";
@@ -278,14 +277,75 @@ boxes.forEach(box => {
         customCursor.style.borderRadius = "0px";
     });
     box.addEventListener("mouseleave", function () {
-        box.style.backgroundColor = "transparent"
-        customCursor.style.width = "20px"
-        customCursor.style.height = "20px"
-        customCursor.style.borderRadius = "50%"
-        customCursor.style.backgroundImage = `none`
+        box.style.backgroundColor = "transparent";
+        customCursor.style.width = "20px";
+        customCursor.style.height = "20px";
+        customCursor.style.borderRadius = "50%";
+        customCursor.style.backgroundImage = `none`;
+        customCursor.style.mixBlendMode = "difference";
     })
 });
 
+const animPage5 = () => {
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".page-5",
+            scroller: "#main",
+            markers: true,
+            start: "top 30%",
+            end: "top 0%",
+        }
+    })
+    tl.from(".page-5 .heading", {
+        opacity: 0,
+        duration: 0.5,
+        y: 10,
+    });
+}
+
+// footer functionality
+const magneticBtn = document.querySelector(".magnetic-btn");
+const footerAnim = () => {
+    gsap.from("footer .heading", {
+        opacity: 0,
+        duration: .5,
+        delay: .3,
+        y: 10,
+        rotate: 10,
+        scrollTrigger: {
+            trigger: "footer",
+            scroller: "#main",
+            start: "top 0%",
+            end: "top 0%",
+            markers: true
+        }
+    });
+}
+
+magneticBtn.addEventListener("mousemove", (e) => {
+    const rect = magneticBtn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    customCursor.style.display = "none";
+    gsap.to(magneticBtn, {
+        x: x * 1,
+        y: y * 1,
+        ease: "power3.out",
+        duration: 0.3
+    });
+});
+
+magneticBtn.addEventListener("mouseleave", () => {
+    customCursor.style.display = "block";
+    gsap.to(magneticBtn, {
+        x: 0,
+        y: 0,
+        ease: "power3.out",
+        duration: 0.5,
+    });
+});
 
 animPage3();
 animPage4();
+animPage5();
+footerAnim();

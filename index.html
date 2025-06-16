@@ -42,6 +42,7 @@
             <div class="circle w-5 h-5 rounded-full"></div>
         </div>
     </header>
+    <div id="pink"></div>
     <main id="main">
         <div class="page-1">
             <div class="text-box flex justify-center items-center flex-col">
@@ -158,8 +159,9 @@
                 </div>
                 <div class="absolute right-48 mt-22">
                     <p> Browse our work and get inspired by the <br> possibilities we can create together.</p>
-                    <a href="#" class="see-all-work-btn rounded-full px-6 py-2 text-xs duration-150">Learn More</a>
-
+                    <a href="#"
+                        class="see-all-work-btn rounded-full px-6 py-2 text-xs duration-15 mt-2 inline-block">See All
+                        Work</a>
                 </div>
             </div>
             <div class="line absolute bottom-2"></div>
@@ -223,39 +225,45 @@
             </div>
         </div>
 
-        <footer>
-            <div>
-                <div class="head">Let's create an experience as <br>remarkable as your business</div>
-                <button>Getin Touch</button>
-            </div>
-
-            <div class="line"></div>
-            <div>
-                <div class="flex justify-between">
-                    <div>Don't miss out. Stay in the loop</div>
-                    <a href="mailto:hello@duo-studio.co">hello@duo-studio.co</a>
+        <footer class="flex justify-center">
+            <div class="w-10/12">
+                <div class="flex justify-between py-12">
+                    <div class="heading">Let's create an experience as <br>remarkable as your business</div>
+                    <button
+                        class="magnetic-btn rounded-full w-26 h-26 bg-white text-black px-4 py-4 text-xs cursor-pointer hover:bg-black hover:text-white">Getin
+                        Touch</button>
                 </div>
-                <div>
-                    <form action="">
-                        <input type="email" required name="email">
-                        <button type="submit">Subscribe</button>
-                    </form>
-                    <div>
-                        <div>
-                            <p>Main Hubs</p>
-                            <p>DC</p>
-                            <p>Denver</p>
-                        </div>
-                        <div>
-                            <p>Social</p>
-                            <a href="">instagram</a>
-                            <a href="">Linkedin</a>
-                            <a href="">Facebook</a>
+
+                <div class="line"></div>
+                <div class="py-20">
+                    <div class="flex justify-between font-extrabold text-lg">
+                        <div>Don't miss out. Stay in the loop</div>
+                        <a href="mailto:hello@duo-studio.co">hello@duo-studio.co</a>
+                    </div>
+                    <div class="flex justify-between items-start mt-6">
+                        <form action="" class="border-b border-black border-solid py-2 w-2/5">
+                            <input type="email" placeholder="Your Email" required name="email"
+                                class="border-none outline-none text-sm w-[78%]">
+                            <button type="submit"
+                                class="cursor-pointer rounded-xl border px-4 text-xs py-1 border-black  hover:bg-white hover:border-none hover:text-black duration-150">Subscribe</button>
+                        </form>
+                        <div class="flex gap-6">
+                            <div>
+                                <p class="mb-0.5">Main Hubs</p>
+                                <p>DC</p>
+                                <p>Denver</p>
+                            </div>
+                            <div class="flex flex-col">
+                                <p class="mb-0.5">Social</p>
+                                <a href="">instagram</a>
+                                <a href="">Linkedin</a>
+                                <a href="">Facebook</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div>
-                    &copy;2025 Duo Studio | <a href="">Privacy Policy</a>
+                    <div class="text-sm">
+                        &copy;2025 Duo Studio | <a href="" class="underline">Privacy Policy</a>
+                    </div>
                 </div>
             </div>
         </footer>
