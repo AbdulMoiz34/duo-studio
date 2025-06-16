@@ -267,7 +267,6 @@ const animPage4 = () => {
     });
 }
 
-
 // page-5 functionality
 const boxes = document.querySelectorAll(".page-5 .box");
 boxes.forEach(box => {

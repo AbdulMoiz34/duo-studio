@@ -168,7 +168,7 @@ header .circle {
 .page-5 {
     z-index: 0;
     position: relative;
-    min-height: 100vh;
+    min-height: 120vh;
 }
 
 .page-5 .head span {
@@ -184,15 +184,16 @@ header .circle {
 .page-5 .box {
     transition: all linear .3s;
     cursor: pointer;
+    border-top: 1px solid #fff;
+    padding: 20px 0;
+    position: relative;
+    z-index: 0;
 
     &:hover {
         color: #fff
     }
 }
 
-.page-5 .box {
-    border-top: 1px solid #fff;
-    padding: 16px 0;
-    position: relative;
-    z-index: 0;
+.page-5 .box:last-child {
+    border-bottom: 1px solid #fff;
 }
