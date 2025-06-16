@@ -24,7 +24,7 @@ init();
 
 const customCursor = document.getElementById("custom-cursor");
 const main = document.getElementById("main");
-main.addEventListener("mousemove", (e) => {
+document.addEventListener("mousemove", (e) => {
     customCursor.style.left = `${e.x}px`;
     customCursor.style.top = `${e.y}px`;
 });
@@ -83,9 +83,10 @@ const updateCursorLabel = () => {
 video.addEventListener("mouseenter", () => {
     updateCursorLabel();
     customCursor.style.width = "auto";
-    customCursor.style.padding = "0 6px";
+    customCursor.style.padding = "0 8px";
     customCursor.style.color = "#fff";
     customCursor.style.display = "block";
+    customCursor.style.borderRadius = "8px"
 });
 
 video.addEventListener("click", () => {
@@ -96,13 +97,15 @@ video.addEventListener("click", () => {
 video.addEventListener("mouseleave", () => {
     customCursor.textContent = "";
     customCursor.style.width = "20px";
+    customCursor.style.borderRadius = ""
 });
 
+// page-2 functionality
 const animPage2 = () => {
     const tl2 = gsap.timeline({
         scrollTrigger: {
-            scroller: "#main",
             trigger: ".page-2",
+            scroller: "#main",
             scrub: 3,
             start: "top 70%",
             end: "top 50%",
@@ -115,8 +118,12 @@ const animPage2 = () => {
         color: "#000",
     });
 
-    tl2.to("header a", {
+    tl2.to("header", {
         color: "#000"
+    });
+
+    tl2.to("header .circle", {
+        backgroundColor: "#000"
     });
 
     tl2.from(".page-2 h1", {
@@ -150,7 +157,6 @@ const animPage2 = () => {
 
 animPage2();
 
-// page-2 functionality
 const left = document.querySelector(".left");
 const rightImage = document.querySelector(".right img");
 let currentImage = null;
@@ -184,16 +190,103 @@ left.addEventListener("mouseleave", () => {
 });
 
 // page-3 functionality
+const animPage3 = () => {
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".page-3",
+            scroller: "#main",
+            start: "top 30%",
+            end: "top 0%",
+            scrub: true
+        }
+    });
+    tl.from(".page-3 h1", {
+        opacity: 0,
+        y: 10,
+        rotate: 10,
+        duration: .4,
+        delay: .3
+    });
+
+    ScrollTrigger.batch(".page-3>div>div", {
+        scroller: "#main",
+        start: "top 50%",
+        onEnter: batch => {
+            gsap.from(batch, {
+                opacity: 0,
+                y: 70,
+                stagger: .5,
+                duration: 1,
+                ease: "power2.out"
+            });
+        },
+        once: true
+    });
+}
+
 const page3 = document.querySelector(".page-3");
 page3.addEventListener("mousemove", (e) => {
     const elem = e.target;
     if (elem.tagName == "VIDEO" || elem.tagName == "IMG") {
         customCursor.textContent = "View";
         customCursor.style.width = "auto";
-        customCursor.style.padding = "0px 6px";
+        customCursor.style.padding = "0px 8px";
+        customCursor.style.borderRadius = "8px";
     } else {
         customCursor.style.width = "20px";
         customCursor.style.height = "20px";
         customCursor.textContent = "";
+        customCursor.style.borderRadius = "50%";
+
     }
 });
+
+// page-4 functionality
+const animPage4 = () => {
+    ScrollTrigger.create({
+        trigger: ".page-4",
+        scroller: "#main",
+        start: "top 60%",
+        end: "top 0%",
+        markers: true,
+
+        onEnter: () => {
+            main.style.backgroundColor = "#000";
+            main.style.color = "#fff";
+            document.querySelector("header").style.color = "#fff";
+            document.querySelector("header .circle").style.backgroundColor = "#fff";
+            document.querySelector(".page-3 .line").style.backgroundColor = "#fff";
+        },
+        onLeaveBack: () => {
+            main.style.backgroundColor = "#fff";
+            main.style.color = "#000";
+            document.querySelector("header").style.color = "#000";
+            document.querySelector("header .circle").style.backgroundColor = "#000";
+            document.querySelector(".page-3 .line").style.backgroundColor = "#000";
+        }
+    });
+}
+
+
+// page-5 functionality
+const boxes = document.querySelectorAll(".page-5 .box");
+boxes.forEach(box => {
+    box.addEventListener("mouseenter", () => {
+        customCursor.style.mixBlendMode = "unset";
+        customCursor.style.backgroundImage = `url('${box.dataset.img}')`;
+        customCursor.style.width = "470px";
+        customCursor.style.height = "370px";
+        customCursor.style.borderRadius = "0px";
+    });
+    box.addEventListener("mouseleave", function () {
+        box.style.backgroundColor = "transparent"
+        customCursor.style.width = "20px"
+        customCursor.style.height = "20px"
+        customCursor.style.borderRadius = "50%"
+        customCursor.style.backgroundImage = `none`
+    })
+});
+
+
+animPage3();
+animPage4();
