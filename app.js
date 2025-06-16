@@ -291,7 +291,6 @@ const animPage5 = () => {
         scrollTrigger: {
             trigger: ".page-5",
             scroller: "#main",
-            markers: true,
             start: "top 30%",
             end: "top 0%",
         }
@@ -317,7 +316,6 @@ const footerAnim = () => {
             scroller: "#main",
             start: "top 0%",
             end: "top 0%",
-            markers: true
         }
     });
 }
@@ -344,6 +342,40 @@ magneticBtn.addEventListener("mouseleave", () => {
         duration: 0.5,
     });
 });
+
+const navItems = document.querySelectorAll(".nav-items li");
+const pink = document.getElementById("pink");
+const marquee = document.querySelector(".custom-marquee");
+navItems.forEach(item => {
+    item.addEventListener("mouseenter", () => {
+        pink.style.display = "block";
+        document.querySelector("header").style.color = "#000";
+        const text = item.querySelector("a").textContent;
+        if (text.includes(",")) {
+            customMarq(text.slice(0, -1));
+        } else {
+            customMarq(text);
+        }
+    });
+    item.addEventListener("mouseleave", () => {
+        marquee.innerHTML = "";
+    });
+});
+
+document.querySelector(".nav-items").addEventListener("mouseleave", () => {
+    pink.style.display = "none";
+    document.querySelector("header").style.color = "#fff";
+});
+
+const customMarq = (text) => {
+    console.log(text);
+    for (let i = 0; i < 2; i++) {
+        const span = document.createElement("span");
+        span.className = "mx-8";
+        span.textContent = `${text} ${text} ${text} ${text} ${text} ${text} ${text} ${text} ${text} ${text} ${text} ${text}`;
+        marquee.appendChild(span);
+    }
+}
 
 animPage3();
 animPage4();

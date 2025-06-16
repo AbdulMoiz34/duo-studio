@@ -59,7 +59,7 @@ header .circle {
     font-weight: bold;
 
     &:hover {
-        color: var(--pink);
+        color: #b289c2;
         text-decoration: underline;
     }
 }
@@ -160,9 +160,44 @@ header .circle {
 
 /* page-4 styling */
 .page-4 {
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
+.page-4 .elem p {
+    transition: all ease-out 0.5s;
+}
+
+.elem img {
+    position: absolute;
+    opacity: 0;
+    transition: all ease-out 0.5s;
+    transform: translateY(10%) rotate(2deg);
+    width: 350px;
+}
+
+.elem img:nth-child(1) {
+    left: 5%;
+}
+
+.elem img:nth-child(3) {
+    right: 5%;
+    bottom: 0%;
+}
+
+.page-4 .elem:hover p {
+    transform: translateY(-100%);
+}
+
+.elem:hover img {
+    opacity: 1;
+    transform: translateY(0%) rotate(0deg);
+}
+
+.page-4 .elem .text-div {
+    &:hover {
+        color: var(--pink);
+    }
+}
 
 /* page-5 styling */
 .page-5 {
@@ -205,6 +240,7 @@ footer {
     min-height: 150vh;
     color: #000;
     padding: 5vw 0;
+    background-color: #edbfff;
 }
 
 footer .heading {
@@ -218,6 +254,23 @@ footer .heading {
     background-color: var(--pink);
     width: 100vw;
     height: 100vh;
-    z-index: 9999;
+    z-index: 6;
     position: fixed;
+    top: 0;
+    display: none;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.custom-marquee {
+    animation: marquee 5s linear infinite;
+    transition: all linear .3s;
 }
